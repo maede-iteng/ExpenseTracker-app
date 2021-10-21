@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="scss/main.css">
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <main id="main">
+        <header id="main__header">
+            <div id="main__first-row">
+                <span>Wallet Balance</span>
+                <span id="year"></span>
+            </div>
+            <div id="main__second-row">
+                <h1 id="main__cost"></h1>
+                <span>USD</span></div>
+        </header>
+            <button class="main__btn" id="main__add-btn"> + Add Transaction</button>
+        <section id="main__section">
+            <form id="main__form">
+                <label for="main__input-number">Enter amount</label>
+                <input type="number" value="" id="main__input-number">
+                <label for="main__textarea">Note</label>
+                <textarea cols="5" rows="2" id="main__textarea" value=""></textarea>
+                <label for="main__input-date">Date</label>
+                <input type="date" value="" id="main__input-date">
+                <label for="main__select">Category</label>
+                <select id="main__select">
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
+                <button type="button" class="main__btn" id="main__save-btn" onclick="transaction()">Save Transaction</button>
+            </form>
+        </section>
+        <ul id="main__expense"></ul>
+    </main>
+</body>
+</html>

@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "Roboto", sans-serif; }
+
+#main {
+  margin: 0 auto;
+  width: 500px; }
+  #main #main__header {
+    background-color: #202020;
+    color: #ffffff;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 8px; }
+  #main__first-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0 1.7rem 0;
+    -webkit-text-stroke: 0.2px #202020; }
+  #main__second-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    #main__second-row h1 {
+      font-weight: 700;
+      margin: 0; }
+    #main__second-row span {
+      -webkit-text-stroke: 0.2px #202020;
+      line-height: 45px; }
+  #main .main__btn {
+    float: right;
+    padding: .5rem 1rem;
+    margin: 1rem 0;
+    border: none;
+    background-color: #beab9e;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 1px; }
+  #main__section {
+    margin: 4rem 0;
+    display: none; }
+  #main__form label {
+    display: block;
+    font-weight: 700;
+    margin: 1rem 0; }
+  #main__form input, #main__form textarea, #main__form select {
+    width: 100%;
+    padding: .6rem .5rem;
+    border-radius: 5px;
+    border: 1px solid #beab9e; }
+  #main__form input, #main__form textarea, #main__form select:focus {
+    outline: none; }
+  #main #main__expense {
+    margin-top: 6rem; }
+    #main #main__expense .expenses {
+      padding: 1rem;
+      margin-top: 1rem;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      display: grid;
+      grid-template-columns: 23% 43% 29% 5%;
+      align-items: center; }
+  #main #expense-type {
+    display: flex;
+    flex-direction: column; }
+  #main #title {
+    font-weight: 700; }
+  #main #description {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 15px; }
+  #main .income {
+    color: green; }
+  #main .expense {
+    color: red; }
+  #main #cost {
+    text-align: right; }
+  #main #delete {
+    text-align: right;
+    margin-top: -40px;
+    font-size: 15px;
+    cursor: pointer; }
+  #main #delete:hover {
+    color: red; }
+
+/*# sourceMappingURL=main.css.map */
