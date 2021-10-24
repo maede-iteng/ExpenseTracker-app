@@ -61,7 +61,7 @@ body {
       margin-top: 1rem;
       box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
       display: grid;
-      grid-template-columns: 23% 43% 29% 5%;
+      grid-template-columns: 12% 39% 44% 5%;
       align-items: center; }
   #main #expense-type {
     display: flex;
@@ -77,6 +77,9 @@ body {
     color: red; }
   #main #cost {
     text-align: right; }
+  #main #date {
+    font-weight: 700;
+    font-size: 22px; }
   #main #delete {
     text-align: right;
     margin-top: -40px;
@@ -84,5 +87,8 @@ body {
     cursor: pointer; }
   #main #delete:hover {
     color: red; }
+  #main #report {
+    text-align: center;
+    color: #beab9e; }
 
 /*# sourceMappingURL=main.css.map */

@@ -42,9 +42,9 @@ showDate();
 function transactionUI(list){
     let expenseSection = document.createElement('li');
     expenseSection.classList.add('expenses');
+    // const year = list.dateValue.getFullYear();
     expenseSection.innerHTML = `
-        
-        <span id="date">${list.dateValue.toLocaleString('en-US' , { day : '2-digit' })}</span>
+        <span id="date">${dateFormat(list)}</span>
         <div id="expense-type">
             <span id="title">${list.title}</span>
             <span id="description">${list.textArea}</span>
@@ -55,6 +55,12 @@ function transactionUI(list){
     expenseEl.appendChild(expenseSection);
     mainSection.style.display = 'none';
     addBtn.style.display = 'block';
+
+}
+function dateFormat(list){
+    let timestamp = list.dateValue;
+    let dates = new Date(timestamp);
+    return dates.toLocaleString('en-US' , { day : '2-digit' });
 }
 function currencyFormat(amount) {
    let cFormat = new Intl.NumberFormat("en-US", {
@@ -65,18 +71,18 @@ function currencyFormat(amount) {
         return cFormat.format(amount);
 
     }else if(selectEl.value === 'Expense') {
-        return '-' + cFormat.format(amount);
+        return cFormat.format(amount * -1);
     }
 }
 function showTotal(){
    let sum = 0;
      list.forEach(list => {
-       if(list.title === 'Income'){
-           sum += list.amount
-       }else if(list.title === 'Expense'){
-           sum -= list.amount;
-       }
-   });
+         if (list.title === 'Income') {
+             sum += list.amount
+         } else{
+             sum -= list.amount;
+         }
+     });
     document.getElementById('main__cost').innerText = currencyFormat(sum);
 }
 function updateLocalStorage(){
@@ -93,6 +99,9 @@ function deleteTransaction(id){
 }
 function Init() {
     expenseEl.innerHTML = "";
+    if (list.length === 0){
+        expenseEl.innerHTML = `<p id="report">No transaction Found</p>`;
+    }
     list.forEach(transactionUI);
     showTotal();
 }
